@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1417127360 source:/home/mohamed/Desktop/comp_off/CS333F15Lab3/OSLAB3/caltrain-runner.c
+	<stdio.h>
+	<stdlib.h>
+	<signal.h>
+	<time.h>
+	<unistd.h>
+	<pthread.h>
+	"caltrain.h"
+
+1447371653 /home/mohamed/Desktop/comp_off/CS333F15Lab3/OSLAB3/caltrain.h
+	<pthread.h>
+
+1447371085 source:/home/mohamed/Desktop/comp_off/CS333F15Lab3/OSLAB3/caltrain.c
+	<pthread.h>
+	"caltrain.h"
+
