@@ -1,11 +1,7 @@
 #include <pthread.h>
 #include "caltrain.h"
 #include <stdio.h>
-//----
-#ifndef MIN
-#define MIN(_x,_y) ((_x) < (_y)) ? (_x) : (_y)
-#endif
-//----
+
 void
 station_init(struct station *station)
 {
@@ -26,13 +22,13 @@ station_load_train(struct station *station, int count)
 	//lock so that no other trains comes here (boarding one train at a time).
 	pthread_mutex_lock(&station->global_mutex);
     //lock so that no conflict happenes when checking and changing values of station elements.
-	if(station->passenger_count > 0 && count > 0){
+	//if(station->passenger_count > 0 && count > 0){
         station->ava_seats=count;
         while((station->ava_seats > 0 && station->passenger_count > 0) || station->boarding != 0){
             pthread_cond_signal(&station->passenger_cond);
             pthread_cond_wait(&station->train_cond,&station->global_mutex);
         }
-	}
+	//}
 	station->ava_seats=0;
 	//unlock
     pthread_mutex_unlock(&station->global_mutex);
