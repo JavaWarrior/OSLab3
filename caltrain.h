@@ -3,7 +3,9 @@
 struct station {
 	// FILL ME IN
 	int passenger_count;
-	int trains_count;
+	int ava_seats;
+	pthread_mutex_t global_mutex,train_mutex;
+    pthread_cond_t passenger_cond,train_cond;
 };
 
 void station_init(struct station *station);
