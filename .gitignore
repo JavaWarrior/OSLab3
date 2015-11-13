@@ -1,6 +1,8 @@
 obj/
 bin/
 OSLAB3.cbp
+#program output
+caltrain
 
 #odts
 *.odt

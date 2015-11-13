@@ -27,6 +27,7 @@ station_load_train(struct station *station, int count)
         pthread_cond_signal(&station->passenger_cond);
         pthread_cond_wait(&station->train_cond,&station->global_mutex);
     }
+    // a for loop can be made here instead of while.
 	station->ava_seats=0;
 	//unlock
     pthread_mutex_unlock(&station->global_mutex);
