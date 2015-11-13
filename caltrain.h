@@ -4,7 +4,8 @@ struct station {
 	// FILL ME IN
 	int passenger_count;
 	int ava_seats;
-	pthread_mutex_t global_mutex,train_mutex;
+	int boarding;
+	pthread_mutex_t global_mutex;
     pthread_cond_t passenger_cond,train_cond;
 };
 
