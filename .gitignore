@@ -2,7 +2,10 @@ obj/
 bin/
 OSLAB3.cbp
 
-
+#odts
+*.odt
+*.odt#
+*~
 # Object files
 *.o
 *.ko
